@@ -1,9 +1,15 @@
 version: '3.1'
 
 services:
-  app: 
-    image: mobilenet:v1.1
+  detectify: 
+    image: detectify:v1.0
     build: .
-    volumes:
-      - ./:/app
-    command: ["tail", "-f", "/dev/null"]
+    ports:
+      - 8000:8000
+    environment:
+      - APP_ADDRESS=0.0.0.0
+      - APP_PORT=8000
+      - DEBUG=True
+      - ENDPOINT_URL=http://127.0.0.1:8000/upload
+      - IMAGE_PATH=data/dog_bike_car.jpg
+    command: ["python", "detectify/api.py"]
