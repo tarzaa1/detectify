@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: detectify
+  labels:
+    app: detectify
+spec:
+  containers:
+    - name: detectify-container
+      image: tareqz/detectify:latest
+      ports:
+        - name: http
+          containerPort: 8000
+          protocol: TCP
+      envFrom:
+        - configMapRef:
+            name: detectify-config

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: detectify-config
+data:
+  APP_ADDRESS: "0.0.0.0"
+  APP_PORT: "8000"
+  DEBUG: "True"
+
+    

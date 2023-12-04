@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: detectify-deployment
+  labels:
+    app: detectify-deployment
+spec:
+  template:
+    metadata:
+      name: detectify
+      labels:
+        app: detectify
+    spec:
+      containers:
+        - name: detectify-container
+          image: tareqz/detectify:latest
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: detectify-config
+  replicas: 3
+  selector:
+    matchLabels:
+      app: detectify
+    

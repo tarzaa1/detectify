@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: detectify-service
+spec:
+  type: NodePort
+  ports:
+    - name: http-service
+      protocol: TCP
+      port: 8000
+      targetPort: http
+  selector:
+    app: detectify
+    
