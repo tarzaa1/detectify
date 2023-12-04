@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mobilenet-api
+  labels:
+    app: mobilenet
+spec:
+  containers:
+    - name: mobilenet-container
+      image: tareqz/mobilenet:latest
+      ports:
+        - name: http
+          containerPort: 8000
+          protocol: TCP
