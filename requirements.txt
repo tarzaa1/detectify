@@ -25,6 +25,7 @@ nvidia-nccl-cu12==2.18.1
 nvidia-nvjitlink-cu12==12.3.52
 nvidia-nvtx-cu12==12.1.105
 Pillow==10.1.0
+python-decouple==3.8
 requests==2.31.0
 sympy==1.12
 torch==2.1.0
