@@ -47,21 +47,19 @@ A simple Flask app with a single endpoint that receives a POST request containin
     kubectl create -f detectify_service.yaml
     ```
 
-4. Create Service:
-
-Wait until all pods are running, you can check their status with:
+4. Wait until all pods are running, you can check their status with:
 
     ```bash
     kubectl get all
     ```
 
-Once pods are running, get the ip address of the service:
+5. Once pods are running, get the ip address of the service:
 
     ```bash
     kubectl describe service <service name>
     ```
 
-Finally, replace the ip address in scripts/upload.py with that of the service and run the script:
+6. Finally, replace the ip address in scripts/upload.py with that of the service and run the script:
 
     ```bash
     python scripts/upload.py
