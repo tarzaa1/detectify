@@ -21,7 +21,7 @@ A simple Flask app with a single endpoint that receives a POST request containin
     docker compose up -d 
     ```
 
-3. Install dependencies:
+3. Run script:
 
     ```bash
     python scripts/upload.py
