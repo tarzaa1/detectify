@@ -10,13 +10,10 @@ from detectify.conf import (
     DEBUG
 )
 
+
 app = Flask(__name__)
 
 model = load_model()
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload_image():
