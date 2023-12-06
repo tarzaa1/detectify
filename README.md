@@ -28,3 +28,41 @@ A simple Flask app with a single endpoint that receives a POST request containin
     ```
 
 ## Kubernetes
+
+1. Create ConfigMap:
+
+    ```bash
+    kubectl create -f detectify_configmap.yaml
+    ```
+
+2. Create Deployment:
+
+    ```bash
+    kubectl create -f detectify_deployment.yaml
+    ```
+
+3. Create Service:
+
+    ```bash
+    kubectl create -f detectify_service.yaml
+    ```
+
+4. Create Service:
+
+Wait until all pods are running, you can check their status with:
+
+    ```bash
+    kubectl get all
+    ```
+
+Once pods are running, get the ip address of the service:
+
+    ```bash
+    kubectl describe service <service name>
+    ```
+
+Finally, replace the ip address in scripts/upload.py with that of the service and run the script:
+
+    ```bash
+    python scripts/upload.py
+    ```
