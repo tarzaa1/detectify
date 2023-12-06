@@ -10,6 +10,4 @@ services:
       - APP_ADDRESS=0.0.0.0
       - APP_PORT=8000
       - DEBUG=True
-      - ENDPOINT_URL=http://127.0.0.1:8000/upload
-      - IMAGE_PATH=data/dog_bike_car.jpg
     command: ["python", "detectify/api.py"]
